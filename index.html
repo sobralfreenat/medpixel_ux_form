@@ -5,50 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário Estratégia UX</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Fundo preto para toda a página */
+            margin: 0;
+            padding: 20px;
+            color: #ffffff; /* Cor do texto para contraste com o fundo preto */
+        }
 
-		.centralizado {
-    	display: flex;
-    	justify-content: center; /* Centraliza horizontalmente */
-    	align-items: center; /* Centraliza verticalmente */
-    	flex-direction: row; /* Organiza os itens em linha */
-		}
-
-  .container {
+        .centralizado {
             display: flex;
             justify-content: center; /* Centraliza horizontalmente */
             align-items: center; /* Centraliza verticalmente */
-            height: 100vh; /* 100% da altura da tela */
-            flex-direction: column; /* Organiza os itens em coluna */
-        }
-        .imagem, .video {
-            margin: 10px; /* Espaço entre a imagem e o vídeo */
+            flex-direction: row; /* Organiza os itens em linha */
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
         .form-container {
-            background-color: #fff;
+            background-color: #ffffff; /* Fundo branco para o container do formulário */
             max-width: 600px;
             margin: 20px auto;
-            padding: 20px;
+            padding: 40px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            color: #000000; /* Cor do texto para contraste com o fundo branco */
         }
+
         h2 {
             color: #333;
         }
+
         .form-group {
             margin-bottom: 20px;
         }
+
         .form-group label {
             display: block;
             margin-bottom: 10px;
-            color: #666;
         }
+
         .form-group input[type="text"],
         .form-group input[type="email"],
         .form-group textarea {
@@ -58,11 +52,13 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
+
         .form-group textarea {
             height: 100px;
         }
+
         .form-group button {
-            background-color: #0056b3;
+            background-color: #000000;
             color: #f0bf00;
             padding: 10px 20px;
             border: none;
@@ -70,42 +66,16 @@
             cursor: pointer;
             font-size: 16px;
         }
+
         .form-group button:hover {
             background-color: #004494;
         }
     </style>
-    <script>
-        function enviarEmail() {
-            var nome = document.getElementById('nome').value;
-            var email = document.getElementById('email').value;
-            var telefone = document.getElementById('telefone').value;
-            var questao1 = document.getElementById('questao1').value;
-            var questao2 = document.getElementById('questao2').value;
-            var questao3 = document.getElementById('questao3').value;
-            var questao4 = document.getElementById('questao4').value;
-            var questao5 = document.getElementById('questao5').value;
-            var questao6 = document.getElementById('questao6').value;
-
-            var corpoEmail = `Nome: ${nome}\n` +
-                             `E-mail: ${email}\n` +
-                             `Telefone: ${telefone}\n\n` +
-                             `1. Por que precisamos de uma estratégia UX em primeiro lugar?\nResposta: ${questao1}\n\n` +
-                             `2. Quem são nossos usuários? Que necessidades/desejos eles têm?\nResposta: ${questao2}\n\n` +
-                             `3. Quem são nossos concorrentes? Quais são seus pontos fortes/fracos?\nResposta: ${questao3}\n\n` +
-                             `4. Quais são os nossos objetivos de negócios? Quais ações trarão o maior valor comercial?\nResposta: ${questao4}\n\n` +
-                             `5. Quem precisa estar envolvido no design da estratégia UX?\nResposta: ${questao5}\n\n` +
-                             `6. Como saberemos quando tivermos sucesso? Como mediremos o sucesso?\nResposta: ${questao6}`;
-
-            window.location.href = `mailto:seuemail@exemplo.com?subject=Formulário Estratégia UX&body=${encodeURIComponent(corpoEmail)}`;
-        }
-    </script>
 </head>
 <body>
 
-
-
 <div class="centralizado">
-    <img src="https://d1yei2z3i6k35z.cloudfront.net/6682800/6612f187a803d_MEdpixelAssessoriadigital2.jpg" width="300" height="200" alt="Descrição da imagem">
+    <img src="https://d1yei2z3i6k35z.cloudfront.net/6682800/6612f187a803d_MEdpixelAssessoriadigital2.jpg" width="200" height="125" alt="Descrição da imagem">
 </div>
 
 <div class="form-container">
@@ -123,9 +93,7 @@
             <label for="telefone">Telefone:</label>
             <input type="text" id="telefone" name="telefone">
         </div>
-        <!-- Repetição dos campos do formulário para cada pergunta aqui -->
-
-		<div class="form-group">
+        <div class="form-group">
             <label for="questao1">Por que precisamos de uma estratégia UX em primeiro lugar?</label>
             <textarea id="questao1" name="questao1"></textarea>
         </div>
@@ -149,22 +117,44 @@
             <label for="questao6">Como saberemos quando tivermos sucesso? Como mediremos o sucesso?</label>
             <textarea id="questao6" name="questao6"></textarea>
         </div>
-
-
         <div class="form-group">
             <button type="submit">Enviar</button>
         </div>
     </form>
 </div>
+<!-- video escondido 
 
-
-
-
-<div class="container">
-     <!-- Repetição dos campos do formulário para cada pergunta aqui 
+    <div class="container">
+    
     <div class="video">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/CÓDIGO_DO_VÍDEO" title="Título do vídeo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>-->
+    </div> -->
+
+<script>
+    function enviarEmail() {
+        var nome = document.getElementById('nome').value;
+        var email = document.getElementById('email').value;
+        var telefone = document.getElementById('telefone').value;
+        var questao1 = document.getElementById('questao1').value;
+        var questao2 = document.getElementById('questao2').value;
+        var questao3 = document.getElementById('questao3').value;
+        var questao4 = document.getElementById('questao4').value;
+        var questao5 = document.getElementById('questao5').value;
+        var questao6 = document.getElementById('questao6').value;
+
+        var corpoEmail = `Nome: ${nome}\n` +
+                         `E-mail: ${email}\n` +
+                         `Telefone: ${telefone}\n\n` +
+                         `1. Por que precisamos de uma estratégia UX em primeiro lugar?\nResposta: ${questao1}\n\n` +
+                         `2. Quem são nossos usuários? Que necessidades/desejos eles têm?\nResposta: ${questao2}\n\n` +
+                         `3. Quem são nossos concorrentes? Quais são seus pontos fortes/fracos?\nResposta: ${questao3}\n\n` +
+                         `4. Quais são os nossos objetivos de negócios? Quais ações trarão o maior valor comercial?\nResposta: ${questao4}\n\n` +
+                         `5. Quem precisa estar envolvido no design da estratégia UX?\nResposta: ${questao5}\n\n` +
+                         `6. Como saberemos quando tivermos sucesso? Como mediremos o sucesso?\nResposta: ${questao6}`;
+
+        window.location.href = `mailto:seuemail@exemplo.com?subject=Formulário Estratégia UX&body=${encodeURIComponent(corpoEmail)}`;
+    }
+</script>
 
 </body>
 </html>
