@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário Estratégia UX</title>
     <style>
+
+		.centralizado {
+    	display: flex;
+    	justify-content: center; /* Centraliza horizontalmente */
+    	align-items: center; /* Centraliza verticalmente */
+    	flex-direction: row; /* Organiza os itens em linha */
+		}
+
+  .container {
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            height: 100vh; /* 100% da altura da tela */
+            flex-direction: column; /* Organiza os itens em coluna */
+        }
+        .imagem, .video {
+            margin: 10px; /* Espaço entre a imagem e o vídeo */
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -37,14 +56,14 @@
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            box-sizing: border-box; /* Adiciona padding dentro da caixa */
+            box-sizing: border-box;
         }
         .form-group textarea {
             height: 100px;
         }
         .form-group button {
             background-color: #0056b3;
-            color: #fff;
+            color: #f0bf00;
             padding: 10px 20px;
             border: none;
             border-radius: 4px;
@@ -55,21 +74,58 @@
             background-color: #004494;
         }
     </style>
+    <script>
+        function enviarEmail() {
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var telefone = document.getElementById('telefone').value;
+            var questao1 = document.getElementById('questao1').value;
+            var questao2 = document.getElementById('questao2').value;
+            var questao3 = document.getElementById('questao3').value;
+            var questao4 = document.getElementById('questao4').value;
+            var questao5 = document.getElementById('questao5').value;
+            var questao6 = document.getElementById('questao6').value;
+
+            var corpoEmail = `Nome: ${nome}\n` +
+                             `E-mail: ${email}\n` +
+                             `Telefone: ${telefone}\n\n` +
+                             `1. Por que precisamos de uma estratégia UX em primeiro lugar?\nResposta: ${questao1}\n\n` +
+                             `2. Quem são nossos usuários? Que necessidades/desejos eles têm?\nResposta: ${questao2}\n\n` +
+                             `3. Quem são nossos concorrentes? Quais são seus pontos fortes/fracos?\nResposta: ${questao3}\n\n` +
+                             `4. Quais são os nossos objetivos de negócios? Quais ações trarão o maior valor comercial?\nResposta: ${questao4}\n\n` +
+                             `5. Quem precisa estar envolvido no design da estratégia UX?\nResposta: ${questao5}\n\n` +
+                             `6. Como saberemos quando tivermos sucesso? Como mediremos o sucesso?\nResposta: ${questao6}`;
+
+            window.location.href = `mailto:seuemail@exemplo.com?subject=Formulário Estratégia UX&body=${encodeURIComponent(corpoEmail)}`;
+        }
+    </script>
 </head>
 <body>
 
+
+
+<div class="centralizado">
+    <img src="https://media.licdn.com/dms/image/C4D0BAQFSGjST2okaKw/company-logo_200_200/0/1647964397614?e=1720656000&v=beta&t=qQCvZL7yAuHBBoZ7I1oIyEwg8MJTmynwyriFYXsOvGo" width="300" height="200" alt="Descrição da imagem">
+</div>
+
 <div class="form-container">
     <h2>Formulário de Estratégia UX</h2>
-    <form>
+    <form onsubmit="event.preventDefault(); enviarEmail();">
         <div class="form-group">
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome">
+            <input type="text" id="nome" name="nome" required>
         </div>
         <div class="form-group">
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone">
+        </div>
+        <!-- Repetição dos campos do formulário para cada pergunta aqui -->
+
+		<div class="form-group">
             <label for="questao1">Por que precisamos de uma estratégia UX em primeiro lugar?</label>
             <textarea id="questao1" name="questao1"></textarea>
         </div>
@@ -93,11 +149,22 @@
             <label for="questao6">Como saberemos quando tivermos sucesso? Como mediremos o sucesso?</label>
             <textarea id="questao6" name="questao6"></textarea>
         </div>
+
+
         <div class="form-group">
             <button type="submit">Enviar</button>
         </div>
     </form>
 </div>
+
+
+
+
+<div class="container">
+     <!-- Repetição dos campos do formulário para cada pergunta aqui 
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/CÓDIGO_DO_VÍDEO" title="Título do vídeo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>-->
 
 </body>
 </html>
